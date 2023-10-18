@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,4 +39,9 @@ public class RestAnimalController {
         miAnimal.getAnimals();
     }
 
+    @PutMapping("/animal")
+    public void editAnimal(String name, String type, String sound, int index){
+        Animal elAnimal = new Animal(name, type, sound);
+        elAnimal.updateListMember(elAnimal, index);
+    }
 }

@@ -72,4 +72,10 @@ public class Animal {
     public void removeAnimal(int index){
         animals.remove(index);
     }
+
+    public void updateListMember(Animal animal, int index){
+        this.genAnimals();
+        animals.set(index, animal);
+        this.getAnimals();
+    }
 }
